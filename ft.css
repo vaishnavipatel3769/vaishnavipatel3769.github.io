@@ -1,0 +1,31 @@
+/* Social Button Stype */
+    .scl-btn {
+      padding: 12px;
+      font-size: 10px;
+      width: 55px;
+      text-align: center;
+      text-decoration: none;
+      margin:2px;
+      color: white;
+    }
+    /* Hover Effect */
+    .scl-btn:hover {
+      opacity: 0.8;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+    }
+    /* Round buttons */
+    .scl-crcl {
+      border-radius: 20%;
+    }
+    /* Round Corners */
+    .scl-rnd {
+        border-radius:3px;
+    }
+    /* Brand Colors */
+    .fa-facebook-f { background: #3B5998; }
+    .fa-twitter { background: #55ACEE; }
+    .fa-linkedin-in { background: #007bb5; }
+    .fa-youtube { background: #bb0000; }
+    

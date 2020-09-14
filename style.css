@@ -1,6 +1,6 @@
 body{
   margin: 0px;
-  padding: 0px;
+  padding: 0px;   
 }
 
 .topnav {
@@ -17,9 +17,41 @@ body{
   font-size: 17px;
 }
 
-.topnav a:hover {
+.dropdown {
+  float: right; 
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #cef2ec;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.topnav a:hover,.dropdown:hover .dropbtn {
   background-color:#00cccc;
-  /*color: black;*/
 }
 .a{
   width: 50%;
@@ -27,13 +59,37 @@ body{
   position: absolute;
   height: auto;
 }
-.b{
-  float: right;
-
-}
 .aboutus{
   text-align: center;
   font-size: 25px;
+}
+
+.column1 {
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: white;
+}
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+div.polaroid {
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  margin-left: 40px;
+}
+
+div.card {
+  padding: 10px;
+  color: black;
+  font-size: 17px;
+  font-family: Raleway,sans-serif;
 }
 .footer{
   position: absolute;
@@ -41,14 +97,14 @@ body{
   background-color: black;
   
 }
-/* Create four equal columns that floats next to each other */
-.column1 {
+.column {
   float: left;
-  width: 33%;  
+  width: 33.3%;
+  text-align: center; 
+  color: white;
 }
-
 /* Clear floats after the columns */
-.row1:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
