@@ -1,3 +1,6 @@
+<?php
+include_once('dbcon.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +9,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="ft.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="ft.css">
-    <link rel="stylesheet" type="text/css" href="forgotpassword.css">
+   <link rel="stylesheet" type="text/css" href="login.css">
     
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px;">
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
+        <span class="navbar-toggler-icon" style="background-image: url(cycle.png)";></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         		<div class="navbar-nav">
@@ -30,6 +33,7 @@
                         
                     </div>
                 </div>
+				
 				<div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
                     <div class="dropdown-menu">
@@ -38,33 +42,50 @@
                         
                     </div>
                 </div>
-				
                 <a href="#" class="nav-item nav-link">About Us</a>
                 <a href="#" class="nav-item nav-link">Contact Us</a>
             </div>
             
             <div class="navbar-nav">
                  <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
-                <a href="login.html" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
+                <a href="registration.html" class="nav-item nav-link active"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
             </div>
         </div>
     </nav>
 </div>
-<div class="fp"> 
- 	
- 	<form action="" method="">
-		 <center><img src="./images/logo.jpg" width="100px"></center>
-            <center> <h1 class="font-weight-bolder"> Reset Password </h1> </center>  
-            <hr>     
-            <label><b>Email/Phone Number*: </b></label>   
-            <input type="text" placeholder="Email/Phone Number" name="email/phone number" required> 
-			 <label><b>OTP*:</b> </label>   
-            <input type="text" placeholder="OTP" name="otp" required> 
-            <label><b>New Password*:</b> </label>   
-            <input type="password" placeholder="New Password" name="new password" required>
-           <center><button type="submit" class="btn"><a href="login.html" style="text-decoration: none;color:black">Done</a></button></center>   
-    </form>
-</div>
+<?php
+	if(isset($_POST['submit']))
+	{
+		$query = "select * from users where email = '{$_POST["email"]}' and password = '{$_POST["password"]}'";
+		$result = mysqli_query($con,$query);
+		if(mysqli_num_rows($result)>0)
+		{
+			header('Location: Dashboard.php');
+		}
+		else
+		{
+			//echo 'Email or Password may wrong.';
+		}
+	}
+?>
+ <div class="login"> 
+    <form method="post">  
+       <center> <img src="./images/logo.jpg" width="100px"></center>
+        <h1 class="font-weight-bolder"> <center> Sign In </center> </h1>
+        <p> <center>Please fill this form to login</center> </p>
+        <hr> 
+        <label><b>Email : </b></label>   
+        <input type="text" placeholder="Enter Email" name="email" required>  
+        <label><b>Password :</b> </label>   
+        <input type="password" placeholder="Enter Password" name="password" required>  
+        <center>  
+        <input type="submit" class="btn" name="submit" value="Login"/>
+    	<button type="button" class="btn" ><a href="registration.html"style="text-decoration: none;color:black">SignUp</a></button>
+        <br>
+        <a href="forgotpassword.html"style="text-decoration: none;color:black"> Forgot password? </a> 
+    </center>
+  </form>  
+</div>   
 
 <div class="mt-5 pt-5 pb-5 footer" style="background:black">
 <div class="container"  style="color:white">
@@ -98,7 +119,6 @@
     </div>    
 </div>
 </div>
-	
 
-</body>     
-</html>  
+</body>
+</html>

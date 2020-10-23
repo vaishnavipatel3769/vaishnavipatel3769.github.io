@@ -14,6 +14,47 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    <style type="text/css">
+
+.box img{
+	height : 90%;
+	width : 90%;	
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 29px;
+  right: 0;
+  top:0;
+  background-color: #8292ed;
+  overflow: hidden;
+  width: 90%;
+  height: 90%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.text {
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.box:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
        @media screen and (max-width: 1450px) {
         .a {
             margin-top:30px;
@@ -49,13 +90,15 @@
             margin-top:120px;
             width: 100%;
         }
-    </style>
+		
+		
+	</style>
     
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px;">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"style="background-image: url(cycle.png)";></span>
+        <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
@@ -63,14 +106,23 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Tiffin</a>
-                        <a href="#" class="dropdown-item">Catering</a>
+                        <a href="tiffin.html" class="dropdown-item">Tiffin</a>
+                        <a href="catering.html" class="dropdown-item">Catering</a>
                         
                     </div>
                 </div>
-				<a href="#" class="nav-item nav-link">Media</a>
+
+                   <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
+                    <div class="dropdown-menu">
+                        <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
+                        <a href="videogallery.html" class="dropdown-item">Video Gallery</a>
+                        
+                    </div>
+                </div>
+
                 <a href="#aboutus" class="nav-item nav-link">About Us</a>
-                <a href="#" class="nav-item nav-link">Contact Us</a>
+                <a href="#contactus" class="nav-item nav-link">Contact Us</a>
             </div>
             
             <div class="navbar-nav">
@@ -96,12 +148,12 @@
 
 <div id="boxes">
     <div id="dialog" class="window"> 
-    <div id="san">
-    <a href="#" class="close agree">
-    <img src="close.jpg" width="25px" style="float:right; margin-right: -5px; margin-top: -10px;"></a>
-    <img src="popup.jpg" id="popup" height="650" width="450">
+    	<div id="san">
+    		<a href="#" class="close agree">
+    		<img src="./images/close.jpg" width="25px" style="float:right; margin-right: -5px; margin-top: -10px;"></a>
+    		<img src="./images/popup.jpg" height="650" width="500">
     </div>
-    </div>
+</div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script> 
     <script src="swc.js"></script>
     <div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask"></div>
@@ -176,6 +228,67 @@
     </div>
 </div>
 </div>
+
+
+  <div class="container">
+  	<center><h1 class="font-weight-bolder mt-2" style="font-family: Poppins;color: #2D3C6B"> Recognition And Awardness</h1></center>
+    <div class="row no-gutters gallerys mt-3">
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+        <img src="./images/gal1.jpg" class="img-thumbnail  ml-4"></img>
+		    <div class="overlay">
+				  <div class="text">
+          In 2005, the Indian Institute of Management (Ahmedabad) featured a case study on the Mumbai Dabbawalas from a management perspective of logistics.
+          </div>
+        </div>
+      </div>
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box ">
+      	<img src="./images/gal2.jpg" class="img-thumbnail  ml-4"></img>
+		    <div class="overlay">
+			   <div class="text">
+            The New York Times reported in 2007 that the 125-year-old Dabbawala industry continues to grow at a rate of 5–10% per year.
+          </div>
+        </div>
+      </div>     
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+      	<img src="./images/gal3.jpg" class="img-thumbnail  ml-4"></img>
+		    <div class="overlay">
+				<div class="text">
+            Mr Richard Branson actually travelled with us, like a Dabbawala and delivered a huge tiffin to his own employees at Virgin, Mumbai.
+          </div>
+        </div>
+      </div>   
+
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box ">
+        <img src="./images/gal4.jpg" class="img-thumbnail  ml-4"></img>
+		    <div class="overlay">
+				<div class="text">
+          In 1998, Forbes Global magazine, conducted a quality assurance study on our operations and gave it a Six Sigma efficiency rating of 99.999999
+          	</div>
+		</div>
+      </div>   
+
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+        <img src="./images/gal5.jpg" class="img-thumbnail  ml-4"></img>
+		    <div class="overlay">
+				<div class="text">
+            ISO 9001:2000 certified by the Joint Accreditation System of Australia and New Zealand.
+          </div>
+        </div>
+      </div>   
+
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+        <img src="./images/gal6.jpg" class="img-thumbnail ml-4"></img>
+		    <div class="overlay">
+				<div class="text">
+            Prince Charles visited us during his visit to India. Charles also invited Dabbawalas to his wedding with Camilla Parker Bowles in London on 9 April 2005.
+          </div>
+        </div>
+      </div>   
+	</div>
+</div>
+	 
+<!--footer-->	
+<div id="contactus">  
 <div class="mt-5 pt-5 pb-5 footer" style="background:black">
 <div class="container"  style="color:white">
   <div class="row">
@@ -187,7 +300,7 @@
     <div class="col-lg-3 col-xs-12 links" style="color:white">
       <h4 class="mt-lg-0 mt-sm-3">LINKS</h4>
         <ul class="m-0 p-0">
-          <li><a href="" style="color:white">HOME</a></li>
+          <li><a href="index.html" style="color:white">HOME</a></li>
           <li><a href="#aboutus" style="color:white">ABOUT  US</a></li>
           <li><a href="#" style="color:white">SERVICES</a></li>
           <li><a href="#" style="color:white">MEDIA</a></li>
@@ -208,6 +321,6 @@
     </div>    
 </div>
 </div>
-
+</div>
 </body>
 </html>

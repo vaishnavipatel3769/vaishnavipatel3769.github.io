@@ -8,6 +8,7 @@
 }  
 #boxes .window {
   position:absolute;
+  
   display:none;
   z-index:9999;
   padding:50px;
@@ -16,18 +17,8 @@
 }
 
 #boxes #dialog {
-  width:460px; 
+  width:520px; 
   padding:5px;
   background-color:white;
   font-size: 15pt;
 }
-@media screen and (max-width: 500px) {
- #boxes #dialog {
-     width: 360px;
-     height: 690px;
-        }
-@media screen and (max-width: 500px) {
- #popup {
-     width: 350px;
-     height: 650px;
-        }

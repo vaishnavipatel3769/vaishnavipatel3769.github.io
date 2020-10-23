@@ -1,70 +1,108 @@
+<?php
+include_once('dbcon.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<title>Sign Up</title>  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="ft.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="ft.css">
-    <link rel="stylesheet" type="text/css" href="forgotpassword.css">
-    
+   <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px;">
-		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+       <span class="navbar-toggler-icon" style="background-image: url(cycle.png)";></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        		<div class="navbar-nav">
-		        <a href="index.html" class="nav-item nav-link">Home</a>
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu">
                         <a href="#" class="dropdown-item">Tiffin</a>
                         <a href="#" class="dropdown-item">Catering</a>
-                        
                     </div>
                 </div>
-				<div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
-                    <div class="dropdown-menu">
-                        <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
-                        <a href="videogallery.html" class="dropdown-item">Video Gallery</a>
-                        
-                    </div>
-                </div>
-				
+				 <a href="#" class="nav-item nav-link">Media</a>
                 <a href="#" class="nav-item nav-link">About Us</a>
                 <a href="#" class="nav-item nav-link">Contact Us</a>
             </div>
             
             <div class="navbar-nav">
-                 <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
+                 <a href="" class="nav-item nav-link active"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
                 <a href="login.html" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
             </div>
         </div>
     </nav>
-</div>
-<div class="fp"> 
- 	
- 	<form action="" method="">
-		 <center><img src="./images/logo.jpg" width="100px"></center>
-            <center> <h1 class="font-weight-bolder"> Reset Password </h1> </center>  
-            <hr>     
-            <label><b>Email/Phone Number*: </b></label>   
-            <input type="text" placeholder="Email/Phone Number" name="email/phone number" required> 
-			 <label><b>OTP*:</b> </label>   
-            <input type="text" placeholder="OTP" name="otp" required> 
-            <label><b>New Password*:</b> </label>   
-            <input type="password" placeholder="New Password" name="new password" required>
-           <center><button type="submit" class="btn"><a href="login.html" style="text-decoration: none;color:black">Done</a></button></center>   
-    </form>
-</div>
+	<?php
+		if(isset($_POST['submit']))
+		{
+			if($_POST['gender']=='male')
+			{
+				$gender = 1;
+			}
+			if($_POST['gender']=='female')
+			{
+				$gender = 0;
+			}
+			$query = "insert into users(name,gender,email,password,contactno,address) values ('{$_POST["name"]}',$gender,'{$_POST["email"]}','{$_POST["confirmpass"]}','{$_POST["mobileno"]}','{$_POST["address"]}')";
+			$result=mysqli_query($con,$query);
+			if($result)
+			{
+				header('Location:login.php');
+			}
+			else
+			{
+				echo 'Can not register';
+			}
+
+		}
+	?>
+  <form method="post">
+      <div class="signup">
+        <center> <img src="./images/logo.jpg" width="100px"></center>
+        <h1 class="font-weight-bolder"> <center> Sign Up </center> </h1>
+        <p> <center>Please fill this form to create account</center> </p>
+        <hr>
+        <label for="name"><b>Name*</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required>
+		    
+        <label for="gender"><b>Gender*</b></label>
+        <input type="radio" name="gender" value="male" required=""> Male
+        <input type="radio" name="gender" value="female" required=""> Female<br>
+        
+        <label for="email"><b>Email*</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        
+        <label for="psw"><b>Password*</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="psw-confirm"><b>Confirm Password*</b></label>
+        <input type="password" placeholder="Confirm Password" name="confirmpass" required>
+
+        <label for="contactno"><b>Contact Number*</b></label>
+        <input type="text" placeholder="Enter Mobile Number" name="mobileno" required>
+
+        <label for="address"><b>Address*</b></label>
+        <input type="text" placeholder="Enter Address" name="address" required>
+        <br>    
+
+        <center> <input type="submit"class="btn" name="submit" value="Submit"></center>
+
+        <center>Already Registred? <a href="login.html" style="text-decoration: none;color:black">Login Here</a></center>
+        </div>
+    </form>  
 
 <div class="mt-5 pt-5 pb-5 footer" style="background:black">
 <div class="container"  style="color:white">
@@ -98,7 +136,6 @@
     </div>    
 </div>
 </div>
-	
+</body>
+</html>
 
-</body>     
-</html>  

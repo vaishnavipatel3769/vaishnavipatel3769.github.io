@@ -15,11 +15,36 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    <link rel="stylesheet" type="text/css" href="signup.css">
+
+   <!--form validation-->
+   <script type="text/javascript">
+   	function validateform(){
+   	// Retrieving the values of form elements 
+    var name = document.register.name.value;
+    var gender = document.register.gender.value;
+    var email = document.register.email.value;
+  	var psw = document.register.psw.value;
+  	var psw-confirm = document.register.psw-confirm.value;
+	
+	if (psw != psw_confirm) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+			
+	var contactno = document.register.contactno.value;
+  	var home-add = document.register.home-add.value;
+  	alert("Registration successful")
+   	}
+	
+
+   </script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-       <span class="navbar-toggler-icon" style="background-image: url(cycle.png)";></span>
+       <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
@@ -27,11 +52,20 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Tiffin</a>
+                        <a href="tiffin.html" class="dropdown-item">Tiffin</a>
                         <a href="#" class="dropdown-item">Catering</a>
                     </div>
                 </div>
-				 <a href="#" class="nav-item nav-link">Media</a>
+				 
+				 <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
+                    <div class="dropdown-menu">
+                        <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
+                        <a href="videogallery.html" class="dropdown-item">Video Gallery</a>
+                        
+                    </div>
+                </div>
+				
                 <a href="#" class="nav-item nav-link">About Us</a>
                 <a href="#" class="nav-item nav-link">Contact Us</a>
             </div>
@@ -42,40 +76,48 @@
             </div>
         </div>
     </nav>
-	
-  <form  action="" method="post">
+
+<!-- Form-->
+  <form name="register"  action=""  onsubmit="return (validateform())" method="post">
       <div class="signup">
         <center> <img src="./images/logo.jpg" width="100px"></center>
         <h1 class="font-weight-bolder"> <center> Sign Up </center> </h1>
         <p> <center>Please fill this form to create account</center> </p>
         <hr>
         <label for="name"><b>Name*</b></label>
-        <input type="text" placeholder="Enter Name" name="name" required>
-		    
+        <input type="text" placeholder="Enter Name" name="name" size="30" required>
+        
         <label for="gender"><b>Gender*</b></label>
         <input type="radio" name="gender" value="male" required=""> Male
         <input type="radio" name="gender" value="female" required=""> Female<br>
-        
+       
         <label for="email"><b>Email*</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-        
-        <label for="psw"><b>Password*</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
+        <input type="email" placeholder="Enter Email" name="email" required>
+       
+        <label for="psw"><b>Password* (Must contain a uppercase,lower case,number and minimum 8 characters) </b></label>
+        <input type="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" required>
+       
         <label for="psw-confirm"><b>Confirm Password*</b></label>
         <input type="password" placeholder="Confirm Password" name="psw-confirm" required>
+        
 
-        <label for="contactno"><b>Contact Number*</b></label>
-        <input type="text" placeholder="Enter Mobile Number" name="mobileno" required>
-
+        <label for="contactno"><b>Contact Number* </b></label>
+        <input type="text" placeholder="Enter Mobile Number"  pattern="[0-9]{10}"  name="mobileno" minlength="10"  required>
+        
+        
         <label for="address"><b>Address*</b></label>
         <input type="text" placeholder="Enter Address" name="home-add" required>
         <br>    
 
-        <center> <button type="submit"class="btn">Sign Up</button></center>
+        <center> 
+        	<button type="submit" class="btn" value="submit">Sign Up</button>
+        </center>
         <center>Already Registred? <a href="login.html" style="text-decoration: none;color:black">Login Here</a></center>
         </div>
     </form>  
+
+
+<!--footer-->
 
 <div class="mt-5 pt-5 pb-5 footer" style="background:black">
 <div class="container"  style="color:white">

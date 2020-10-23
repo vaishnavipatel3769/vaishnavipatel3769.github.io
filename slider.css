@@ -1,0 +1,106 @@
+.slider {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery {
+  width: 300px;
+  height: 400px;
+  line-height: 0;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: perspective(400px) rotateY(0deg);
+  transform: perspective(400px) rotateY(0deg);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.gallery:hover {
+  -webkit-transform: perspective(450px) rotateY(25deg);
+  transform: perspective(450px) rotateY(25deg);
+}
+.gallery:hover div.box img {
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: .2s;
+  transition: .2s;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.box:nth-of-type(1) {
+  -webkit-transform: translateZ(0px) translateX(0px);
+  transform: translateZ(0px) translateX(0px);
+}
+.box:nth-of-type(2) {
+  -webkit-transform: translateZ(-40px) translateX(-40px);
+   transform: translateZ(-40px) translateX(-40px);
+}
+.box:nth-of-type(2) img {
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+.box:nth-of-type(3) {
+  -webkit-transform: translateZ(-80px) translateX(-80px);
+          transform: translateZ(-80px) translateX(-80px);
+}
+.box:nth-of-type(3) img {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+.box:nth-of-type(4) {
+  -webkit-transform: translateZ(-120px) translateX(-120px);
+          transform: translateZ(-120px) translateX(-120px);
+}
+.box:nth-of-type(4) img {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+.box:nth-of-type(5) {
+  -webkit-transform: translateZ(-160px) translateX(-160px);
+          transform: translateZ(-160px) translateX(-160px);
+}
+.box:nth-of-type(5) img {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+.box:nth-of-type(6) {
+  -webkit-transform: translateZ(-200px) translateX(-200px);
+          transform: translateZ(-200px) translateX(-200px);
+}
+.box:nth-of-type(6) img {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+.box:focus {
+  -webkit-transform: translateZ(120px) translateZ(0px);
+          transform: translateZ(120px) translateZ(0px);
+  outline: none;
+}
+.box:focus img {
+  -webkit-filter: blur(0px);
+   filter: blur(0px);
+}
