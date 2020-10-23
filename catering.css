@@ -25,13 +25,37 @@ h6 {
   font-weight: 900;
 }
 
+.display-1, .display-2, .display-3, .display-4 {
+  font-weight: 900;
+}
+
+.heading-big {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: red;
+  margin: 0;
+  padding: .15rem 0;
+  line-height: 1.2;
+  font-size: 2rem;
+  -webkit-transition: color .5s ease-in, border-color .5s ease-in-out;
+  transition: color .5s ease-in, border-color .5s ease-in-out;
+}
+.heading-big-square {
+  padding: 1rem 1rem;
+  border: 10px solid red;
+  margin: .5rem auto 1rem auto;
+}
+.heading-big:hover {
+  color: #ff9900;
+  border-color: #ff9900;
+}
 
 .card {
   -webkit-transition: .5s ease;
   transition: .5s ease;
   border-radius: 5px 10px 5px 10px;
   -webkit-transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
-  transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
+          transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
 }
 .card-header {
   border-radius: 0;
@@ -47,7 +71,7 @@ h6 {
 .card:hover {
   border-color: #ffc107;
   -webkit-transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+          transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 }
 .card:hover .card-header, .card:hover .card-footer {
   color: #ba8b00;
@@ -56,9 +80,9 @@ h6 {
 }
 .card:hover .promotion-promo {
   -webkit-transform: scale(1.175) translateY(2.5px);
-  transform: scale(1.175) translateY(2.5px);
+          transform: scale(1.175) translateY(2.5px);
   -webkit-transform-origin: left center;
-  transform-origin: left center;
+          transform-origin: left center;
 }
 .card:hover .promotion-price {
   -webkit-transform: translate(2.5px, 17.5px) scale(1.15);
@@ -104,7 +128,7 @@ h6 {
   color: #fff;
   z-index: -1;
   -webkit-transform: translate(5px, 27.5px) rotate(-9deg);
-  transform: translate(5px, 27.5px) rotate(-9deg);
+          transform: translate(5px, 27.5px) rotate(-9deg);
   border: 1px dashed #fff;
   -webkit-transition: .25s linear;
   transition: .25s linear;
@@ -126,10 +150,26 @@ h6 {
 .card-animate {
   counter-reset: section;
 }
-
+.card-animate .card-body:before {
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  counter-increment: section;
+  content: "" counter(section) "";
+  display: block;
+  font-size: 15rem;
+  font-weight: 900;
+  position: absolute;
+  bottom: 5rem;
+  line-height: 0;
+  left: -.85rem;
+  padding: 0;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
 .card-animate .card:hover .card-body:before {
   -webkit-transform: translate(10px, -10px);
-  transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
 }
 .card-animate .card-text {
   margin-top: 2rem;
