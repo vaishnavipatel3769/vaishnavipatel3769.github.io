@@ -17,29 +17,43 @@
    <link rel="stylesheet" type="text/css" href="signup.css">
 
    <!--form validation-->
-   <script type="text/javascript">
-   	function validateform(){
-   	// Retrieving the values of form elements 
-    var name = document.register.name.value;
-    var gender = document.register.gender.value;
-    var email = document.register.email.value;
-  	var psw = document.register.psw.value;
-  	var psw-confirm = document.register.psw-confirm.value;
-	
-	if (psw != psw_confirm) {
-                alert("Passwords do not match.");
-                return false;
-            }
-            return true;
-			
-	var contactno = document.register.contactno.value;
-  	var home-add = document.register.home-add.value;
-  	alert("Registration successful")
-   	}
-	
+  <script>
+    function validateform(){
+    // Retrieving the values of form elements 
+     var name = document.register.name.value;
+    // var gender = document.register.gender.value;
+    //var email = document.register.email.value;
+    var psw = document.register.psw.value;
+    var pswconfirm = document.register.pswconfirm.value;
+    //alert(pswconfirm);
+    //alert(psw);
+    
+    // Validate name
+    if(name == "") {
+        alert("Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            alert("Please enter a valid name");
+            document.register.name.focus() ;
+            return false;
+        }
+    }
+    
+    
+
+    if (psw != pswconfirm) {
+      alert("Passwords do not match.");
+      document.register.pswconfirm.focus() ;
+      return false;
+    }
+  return true;
+      
+
+    // alert("Registration successful")
+  
 
    </script>
-
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px">
@@ -95,14 +109,14 @@
         <input type="email" placeholder="Enter Email" name="email" required>
        
         <label for="psw"><b>Password* (Must contain a uppercase,lower case,number and minimum 8 characters) </b></label>
-        <input type="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" required>
-       
+        <input type="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" required> 
+             
         <label for="psw-confirm"><b>Confirm Password*</b></label>
-        <input type="password" placeholder="Confirm Password" name="psw-confirm" required>
-        
-
+        <input type="password" placeholder="Confirm Password" name="pswconfirm" required>
+              
+       
         <label for="contactno"><b>Contact Number* </b></label>
-        <input type="text" placeholder="Enter Mobile Number"  pattern="[0-9]{10}"  name="mobileno" minlength="10"  required>
+        <input type="number" placeholder="Enter Mobile Number"  pattern="[0-9]{10}"  name="mobileno" minlength="10"  required>
         
         
         <label for="address"><b>Address*</b></label>
