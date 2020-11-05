@@ -27,8 +27,7 @@
     var pswconfirm = document.register.pswconfirm.value;
     //alert(pswconfirm);
     //alert(psw);
-    
-    // Validate name
+     // Validate name
     if(name == "") {
         alert("Please enter your name");
     } else {
@@ -39,19 +38,12 @@
             return false;
         }
     }
-    
-    
-
     if (psw != pswconfirm) {
-      alert("Passwords do not match.");
-      document.register.pswconfirm.focus() ;
-      return false;
-    }
-  return true;
-      
-
-    // alert("Registration successful")
-  
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+          }
 
    </script>
 </head>

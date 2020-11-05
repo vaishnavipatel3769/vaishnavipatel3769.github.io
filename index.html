@@ -15,87 +15,87 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    <style type="text/css">
 
-.box img{
-	height : 90%;
-	width : 90%;	
-}
+	.box img{
+		height : 90%;
+		width : 90%;	
+	}
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 29px;
-  right: 0;
-  top:0;
-  background-color: #8292ed;
-  overflow: hidden;
-  width: 90%;
-  height: 90%;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
+	.overlay {
+	  position: absolute;
+	  bottom: 0;
+	  left: 29px;
+	  right: 0;
+	  top:0;
+	  background-color: #8292ed;
+	  overflow: hidden;
+	  width: 90%;
+	  height: 90%;
+	  -webkit-transform: scale(0);
+	  -ms-transform: scale(0);
+	  transform: scale(0);
+	  -webkit-transition: .3s ease;
+	  transition: .3s ease;
+	}
 
-.text {
-  color: white;
-  font-size: 14px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+	.text {
+	  color: white;
+	  font-size: 14px;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	  text-align: center;
+	}
 
-.box:hover .overlay {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
+	.box:hover .overlay {
+	  -webkit-transform: scale(1);
+	  -ms-transform: scale(1);
+	  transform: scale(1);
+	}
 
-       @media screen and (max-width: 1450px) {
-        .a {
-            margin-top:30px;
-            width: 100%;
-        }
-        @media screen and (max-width: 1296px) {
-        .a {
-            margin-top:50px;
-            width: 100%;
-        }
-        @media screen and (max-width: 1135px) {
-        .a {
-            margin-top:60px;
-            width: 100%;
-        }
-        @media screen and (max-width: 995px) {
-        .a {
-            margin-top:80px;
-            width: 100%;
-        }
-         @media screen and (max-width: 735px) {
-        .a {
-            margin-top:100px;
-            width: 100%;
-        }
-        @media screen and (max-width: 490px) {
-        .a {
-            margin-top:110px;
-            width: 100%;
-        }
-        @media screen and (max-width: 320px) {
-        .a {
-            margin-top:120px;
-            width: 100%;
-        }
-		
-		
-	</style>
+    @media screen and (max-width: 1450px) {
+    .a {
+        margin-top:30px;
+        width: 100%;
+    }
+    @media screen and (max-width: 1296px) {
+    .a {
+        margin-top:50px;
+        width: 100%;
+    }
+    @media screen and (max-width: 1135px) {
+    .a {
+        margin-top:60px;
+        width: 100%;
+    }
+    @media screen and (max-width: 995px) {
+    .a {
+        margin-top:80px;
+        width: 100%;
+    }
+    @media screen and (max-width: 735px) {
+    .a {
+        margin-top:100px;
+        width: 100%;
+    }
+    @media screen and (max-width: 490px) {
+    .a {
+        margin-top:110px;
+        width: 100%;
+    }
+    @media screen and (max-width: 320px) {
+    .a {
+        margin-top:120px;
+        width: 100%;
+   }
+   
+</style>
     
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40">
+<!--nav bar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px;">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
@@ -138,26 +138,28 @@
         <img class="img-fluid" src="./images/clouds.png" alt="dabba" style="margin-top: -300px;width: 100%" > 
     </div>
 
-<div id="aboutus" class="container-fluid">
-	<center><h1 style="font-family: Monotype Corsiva;color: #b0190e; ">Mumbai Dabbawala</h1></center> 
-     <center><h1 class="font-weight-bolder" style="color: #7096BD">ABOUT US </h1>
-    <h3 class="font-weight-bolder" style="font-family: Poppins;color: #2D3C6B">
-        WELCOME TO MUMBAI DABBAWALA
-    </h3>
-</center>
-
 <div id="boxes">
     <div id="dialog" class="window"> 
     	<div id="san">
     		<a href="#" class="close agree">
     		<img src="./images/close.jpg" width="25px" style="float:right; margin-right: -5px; margin-top: -10px;"></a>
     		<img src="./images/popup.jpg" height="650" width="500">
-    </div>
+   		 </div>
+	</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script> 
+<script src="swc.js"></script>
+<div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask">
 </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script> 
-    <script src="swc.js"></script>
-    <div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask"></div>
- </div>
+</div>
+
+<!--aboutus-->
+<div id="aboutus" class="container-fluid">
+	<center><h1 style="font-family: Monotype Corsiva;color: #b0190e; ">Mumbai Dabbawala</h1></center> 
+     <center><h1 class="font-weight-bolder" style="color: #7096BD">ABOUT US </h1>
+    <h3 class="font-weight-bolder" style="font-family: Poppins;color: #2D3C6B">
+        WELCOME TO MUMBAI DABBAWALA
+    </h3>
+	</center>
 
  <div class="container-fluid">
     <div class="row ">
@@ -187,103 +189,100 @@
         Why Choose Tiffin Services from Mumbai Dabbawala?
     </h2></center>
     <div class="d-flex justify-content-center row mb-3">
-            <div class="col-md-3 col-8">
-                <div class="card h-100">
-                   <center><img class="card-img-top w-50" src="./images/cards1.png" height="170" alt="Card image cap"></center>
-                  <div class="card-body">
-                    <center><h5 class="card-title">Stress-Free Planning</h5>
-                    <p class="card-text">No need to order food every day, choose your meal plan and set your preferences just once</p></center>
-                  </div>
-                </div>
-
+        <div class="col-md-3 col-8">
+            <div class="card h-100">
+        	    <center><img class="card-img-top w-50" src="./images/cards1.png" height="170" alt="Card image cap"></center>
+	        	<div class="card-body">
+	            	<center><h5 class="card-title">Stress-Free Planning</h5>
+	                <p class="card-text">No need to order food every day, choose your meal plan and set your preferences just once</p></center>
+	            </div>
             </div>
-            <div class="col-md-3 col-8">
-                <div class="card h-100" >
-                  <center> <img class="card-img-top w-50" src="./images/cards2.png" height="170" alt="Card image cap"></center>
-                  <div class="card-body">
-                   <center><h5 class="card-title">No more grocery shopping</h5>
+        </div>
+        <div class="col-md-3 col-8">
+            <div class="card h-100" >
+                <center> <img class="card-img-top w-50" src="./images/cards2.png" height="170" alt="Card image cap"></center>
+                <div class="card-body">
+        	        <center><h5 class="card-title">No more grocery shopping</h5>
                     <p class="card-text">Put an end to those frequent trips to the grocery store and standing in line at supermarkets</p></center> 
-                  </div>
                 </div>
-
             </div>
-            <div class="col-md-3 col-8">
-                <div class="card h-100">
-                  <center> <img class="card-img-top w-50" src="./images/cards3.png" height="170" alt="Card image cap"></center>
-                  <div class="card-body">
+        </div>
+        <div class="col-md-3 col-8">
+            <div class="card h-100">
+        	    <center> <img class="card-img-top w-50" src="./images/cards3.png" height="170" alt="Card image cap"></center>
+                <div class="card-body">
                     <center><h5 class="card-title">No need to hire a cook</h5>
                     <p class="card-text">Enjoy delicious home-cooked meals, delivered fresh straight from local home kitchens to your table</p></center>
-                  </div>
                 </div>
             </div>
-            <div class="col-md-3 col-8">
-                <div class="card h-100">
-                  <center><img class="card-img-top w-50" src="./images/cards4.png" height="170" alt="Card image cap"></center>
-                  <div class="card-body">
-                  <center> <h5 class="card-title">Irresistibly delicious</h5>
-                    <p class="card-text">Our food is not only nutritious and free from additives and preservatives but also mouth-watering delicious</p></center>
-                  </div>
-                </div>
-            </div>
+        </div>
+        <div class="col-md-3 col-8">
+          <div class="card h-100">
+            <center><img class="card-img-top w-50" src="./images/cards4.png" height="170" alt="Card image cap"></center>
+          <div class="card-body">
+            <center> <h5 class="card-title">Irresistibly delicious</h5>
+            <p class="card-text">Our food is not only nutritious and free from additives and preservatives but also mouth-watering delicious</p></center>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 </div>
 
-
-  <div class="container">
-  	<center><h1 class="font-weight-bolder mt-2" style="font-family: Poppins;color: #2D3C6B"> Recognition And Awardness</h1></center>
-    <div class="row no-gutters gallerys mt-3">
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
-        <img src="./images/gal1.jpg" class="img-thumbnail  ml-4"></img>
+<div class="container">
+  <center><h1 class="font-weight-bolder mt-2" style="font-family: Poppins;color: #2D3C6B"> Recognition And Awardness</h1></center>
+  <div class="row no-gutters gallerys mt-3">
+  	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+      <img src="./images/gal1.jpg" class="img-thumbnail  ml-4"></img>
 		    <div class="overlay">
 				  <div class="text">
           In 2005, the Indian Institute of Management (Ahmedabad) featured a case study on the Mumbai Dabbawalas from a management perspective of logistics.
           </div>
         </div>
-      </div>
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box ">
-      	<img src="./images/gal2.jpg" class="img-thumbnail  ml-4"></img>
-		    <div class="overlay">
-			   <div class="text">
-            The New York Times reported in 2007 that the 125-year-old Dabbawala industry continues to grow at a rate of 5–10% per year.
-          </div>
-        </div>
-      </div>     
+    </div>
 	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
-      	<img src="./images/gal3.jpg" class="img-thumbnail  ml-4"></img>
-		    <div class="overlay">
+    <img src="./images/gal2.jpg" class="img-thumbnail  ml-4"></img>
+    <div class="overlay">
+      <div class="text">
+        The New York Times reported in 2007 that the 125-year-old Dabbawala industry continues to grow at a rate of 5–10% per year.
+      </div>
+    </div>
+  </div>     
+	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+    <img src="./images/gal3.jpg" class="img-thumbnail  ml-4"></img>
+	    <div class="overlay">
 				<div class="text">
-            Mr Richard Branson actually travelled with us, like a Dabbawala and delivered a huge tiffin to his own employees at Virgin, Mumbai.
-          </div>
+          Mr Richard Branson actually travelled with us, like a Dabbawala and delivered a huge tiffin to his own employees at Virgin, Mumbai.
         </div>
-      </div>   
+      </div>
+  </div>   
 
 	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box ">
-        <img src="./images/gal4.jpg" class="img-thumbnail  ml-4"></img>
-		    <div class="overlay">
+    <img src="./images/gal4.jpg" class="img-thumbnail  ml-4"></img>
+	    <div class="overlay">
 				<div class="text">
           In 1998, Forbes Global magazine, conducted a quality assurance study on our operations and gave it a Six Sigma efficiency rating of 99.999999
-          	</div>
-		</div>
-      </div>   
+       	</div>
+		  </div>
+  </div>   
 
 	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
-        <img src="./images/gal5.jpg" class="img-thumbnail  ml-4"></img>
-		    <div class="overlay">
-				<div class="text">
-            ISO 9001:2000 certified by the Joint Accreditation System of Australia and New Zealand.
-          </div>
+    <img src="./images/gal5.jpg" class="img-thumbnail  ml-4"></img>
+	    <div class="overlay">
+  	 		<div class="text">
+           ISO 9001:2000 certified by the Joint Accreditation System of Australia and New Zealand.
         </div>
-      </div>   
+      </div>
+  </div>   
 
 	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
-        <img src="./images/gal6.jpg" class="img-thumbnail ml-4"></img>
-		    <div class="overlay">
+    <img src="./images/gal6.jpg" class="img-thumbnail ml-4"></img>
+	    <div class="overlay">
 				<div class="text">
             Prince Charles visited us during his visit to India. Charles also invited Dabbawalas to his wedding with Camilla Parker Bowles in London on 9 April 2005.
-          </div>
         </div>
-      </div>   
+      </div>
+    </div>   
 	</div>
 </div>
 	 
