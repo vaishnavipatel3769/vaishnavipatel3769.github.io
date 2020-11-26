@@ -25,6 +25,7 @@
     //var email = document.register.email.value;
     var psw = document.register.psw.value;
     var pswconfirm = document.register.pswconfirm.value;
+    var mobileno=document.register.mobileno,value;
     //alert(pswconfirm);
     //alert(psw);
      // Validate name
@@ -38,10 +39,19 @@
             return false;
         }
     }
+    //validate psw
     if (psw != pswconfirm) {
                 alert("Passwords do not match.");
+                document.register.pswconfirm.focus() ;
                 return false;
-            }
+    }
+
+    //validate mobileno
+    if (mobileno.value.length!=10) {
+            alert("Mobile no should be of 10 Digits only");
+             document.register.mobileno.focus() ;
+            return false;
+    }
             return true;
           }
 
@@ -84,7 +94,7 @@
     </nav>
 
 <!-- Form-->
-  <form name="register"  action=""  onsubmit="return (validateform())" method="post">
+  <form name="register"  action="registration.php"  onsubmit="return (validateform())" method="post">
       <div class="signup">
         <center> <img src="./images/logo.jpg" width="100px"></center>
         <h1 class="font-weight-bolder"> <center> Sign Up </center> </h1>
@@ -92,6 +102,9 @@
         <hr>
         <label for="name"><b>Name*</b></label>
         <input type="text" placeholder="Enter Name" name="name" size="30" required>
+
+        <label for="name"><b>UserName*</b></label>
+        <input type="text" placeholder="Enter UserName" name="username" size="30" required>
         
         <label for="gender"><b>Gender*</b></label>
         <input type="radio" name="gender" value="male" required=""> Male
@@ -108,7 +121,7 @@
               
        
         <label for="contactno"><b>Contact Number* </b></label>
-        <input type="number" placeholder="Enter Mobile Number"  pattern="[0-9]{10}"  name="mobileno" minlength="10"  required>
+        <input type="number" placeholder="Enter Mobile Number"  pattern="[0-9]{10}"  name="mobileno" maxlength="10"  required>
         
         
         <label for="address"><b>Address*</b></label>
@@ -116,7 +129,7 @@
         <br>    
 
         <center> 
-        	<button type="submit" class="btn" value="submit">Sign Up</button>
+        	<button type="submit" class="btn" name="submit">Sign Up</button>
         </center>
         <center>Already Registred? <a href="login.html" style="text-decoration: none;color:black">Login Here</a></center>
         </div>
