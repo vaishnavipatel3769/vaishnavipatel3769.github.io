@@ -1,28 +1,45 @@
+ <?php
+include('logindb.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Index</title>
+    <title>Image Gallery</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="swc.css">
     <link rel="stylesheet" type="text/css" href="ft.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" />
 
-   <style type="text/css">
+<script>
+
+$(document).ready(function(){
+    $('.gallerys').magnificPopup({
+      type:'image',
+      delegate:'a',
+      gallery: {
+        enabled : true
+      }
+    });
+});
+
+</script>
+<style type="text/css">
     @media screen and (max-width: 640px) {
     .container1{
       background-position: right top;
         }
      }
 
-    </style>
-    
+</style>
+   
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px;">
@@ -31,34 +48,54 @@
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
       <div class="navbar-nav">
-        <a href="index.html" class="nav-item nav-link active">Home</a>
+        <a href="index.php" class="nav-item nav-link">Home</a>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
             <div class="dropdown-menu">
-              <a href="tiffin.html" class="dropdown-item">Tiffin</a>
-              <a href="#" class="dropdown-item">Catering</a>
+              <a href="tiffin.php" class="dropdown-item">Tiffin</a>
+              <a href="catering.php" class="dropdown-item">Catering</a>
             </div>
           </div>
-	          <div class="nav-item dropdown">
+		        <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Media</a>
-              <div class="dropdown-menu">
-                <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
-                <a href="videogallery.html" class="dropdown-item">Video Gallery</a>    
-              </div>
+            <div class="dropdown-menu">
+              <a href="imagegallery.php" class="dropdown-item">Image Gallery</a>
+              <a href="videogallery.php" class="dropdown-item">Video Gallery</a>
             </div>
-         <a href="#aboutus" class="nav-item nav-link">About Us</a>
-          <a href="#" class="nav-item nav-link">Contact Us</a>
-      </div>
+          </div>
+        <a href="#aboutus" class="nav-item nav-link">About Us</a>
+        <a href="#" class="nav-item nav-link">Contact Us</a>
+      </div>      
+      <?php
+        if(!empty($_SESSION["username"]))
+        {
+      ?>
       <div class="navbar-nav">
         <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
-        <a href="login.html" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
+        <a href="logout.php" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Logout</a>
       </div>
+      <?php
+        }
+          else
+          {
+      ?>
+      <div class="navbar-nav">
+          <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
+          <a href="login.php" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
+      </div>
+      <?php
+       }
+      ?> 
     </div>
- </nav>
+  </div>
+</nav>
+		
+
+<!------------------------------Image Gallery Coding----------------------------------->
 
 <div class="container1" style="background-image: url(./images/gallery.png);max-width: 100%;background-repeat: no-repeat;">
   <div class="py-4" >
-    <h1 class="text-right mt-5 pr-5 mr-5" style="color: white;">Video Gallery</h1>
+    <h1 class="text-right mt-5 pr-5 mr-5" style="color: white;">Image Gallery</h1>
     <h2 class="text-right pr-5 mr-5" style="color: white ;font-family: monotype corsiva">Mumbai Dabbawala</h2>
   </div>
   <div>
@@ -69,55 +106,50 @@
 <div class="container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb" style="background-color:transparent; font-size:20px;">
-      <li class="breadcrumb-item"><a href="index.html" style="color: black;">Home</a></li>
-      <li class="breadcrumb-item active" style="color: #ed2025;">Video Gallery</a></li>
+      <li class="breadcrumb-item"><a href="index.php" style="color: black;">Home</a></li>
+      <li class="breadcrumb-item active" style="color: #ed2025;">Image Gallery</a></li>
     </ol>
   </nav>
-  <div class="row">
-    <div class="col-xl mt-4">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/c7xsUxk36CQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+  <div class="row no-gutters gallerys">
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i1.jpg" target="_blank"><img src="./images/i1.jpg"  class="img-thumbnail"></a>
+    </div>          
+
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i2.jpg" target="_blank"><img src="./images/i2.jpg"  class="img-thumbnail"></a>
     </div>
 
-    <div class="col-xl mt-4">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/mZl_qAO-6CI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-xl mt-4">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VYsR1KEOO7I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i3.jpg" target="_blank"><img src="./images/i3.jpg"  class="img-thumbnail"></a>
     </div>
 
-    <div class="col-xl mt-4 ">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/kNpNeVwmpX0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i4.jpg" target="_blank"><img src="./images/i4.jpg"  class="img-thumbnail"></a>
+          </div>
 
-  <div class="row">
-    <div class="col-xl mt-4 ">
-      <div class="embed-responsive embed-responsive-16by9"> 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/bgEOnooSW_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i5.jpg" target="_blank"><img src="./images/i5.jpg"  class="img-thumbnail" ></a>
     </div>
 
-    <div class="col-xl mt-4 ">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/aUsXloR42ZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+     <a href="./images/i6.jpg" target="_blank"><img src="./images/i6.jpg"  class="img-thumbnail"></a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i7.jpg" target="_blank"><img src="./images/i7.jpg"  class="img-thumbnail" ></a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i8.jpg" target="_blank"><img src="./images/i8.jpg"  class="img-thumbnail"></a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+      <a href="./images/i9.jpg" target="_blank"><img src="./images/i9.jpg"  class="img-thumbnail"></a>
     </div>
   </div>
 </div>
 
-
+<!--footer-->
 <div class="mt-5 pt-5 pb-5 footer" style="background:black">
 <div class="container"  style="color:white">
   <div class="row">
@@ -129,7 +161,7 @@
     <div class="col-lg-3 col-xs-12 links" style="color:white">
       <h4 class="mt-lg-0 mt-sm-3">LINKS</h4>
         <ul class="m-0 p-0">
-          <li><a href="index.html" style="color:white">HOME</a></li>
+          <li><a href="index.php" style="color:white">HOME</a></li>
           <li><a href="#aboutus" style="color:white">ABOUT  US</a></li>
           <li><a href="#" style="color:white">SERVICES</a></li>
           <li><a href="#" style="color:white">MEDIA</a></li>

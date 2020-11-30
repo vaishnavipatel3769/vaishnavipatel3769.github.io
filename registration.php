@@ -29,21 +29,21 @@
 			{
 				$gender = 0;
 			}
-			$query = "insert into registration(name,username,gender,email,password,contactno,address) values ('{$_POST["name"]}', '{$_POST["username"]}', $gender,'{$_POST["email"]}','{$_POST["psw"]}','{$_POST["mobileno"]}','{$_POST["home-add"]}')";
+			$query = "insert into registration(name,username,gender,email,password,contactno,address) values ('{$_POST["name"]}', '{$_POST["username"]}', $gender,'{$_POST["email"]}','{$_POST["psw"]}','{$_POST["mobileno"]}','{$_POST["address"]}')";
 			
 			$result=mysqli_query($conn,$query);
 			if($result)
 			{
-				header('Location:login.html');
+				header('Location:login.php');
 			}
 			else
 			{
-				echo "<script type='text/javascript'>alert('You are already Registered');location='login.html';</script>";				
+				echo "<script type='text/javascript'>alert('You are already Registered');location='login.php';</script>";				
 				
 
 			}
 
-			//header("location:login.html");
+			//header("location:login.php");
 		}
 	
 ?>

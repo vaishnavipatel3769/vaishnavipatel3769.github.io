@@ -1,30 +1,5 @@
 <?php
-	/*$con=mysqli_connect("localhost","root","");
-	mysqli_select_db($con,'mumbai_dabbawala');
-	session_start();
-	
-	$username=$_POST["username"];
-	$password=$_POST["password"]; 
-    
-    if(!empty($username) && !empty($password))
-    {
-		$res="select * from registration where username='".$username."' and password='".$password."'";
-		
-		$val=mysqli_query($con,$res);
-		$n=0;
-		while($row=mysqli_fetch_assoc($val))
-		{
-			header("location:catering.html");
-			$n=1;
-		}
-		if($n==0)
-		{
-			echo '<script>alert("inside if n=0")</script>';
-			header("location:registration.html");
-		}
-	}*/
 session_start();
-$message="";
 if(count($_POST)>0) {
 	$con=mysqli_connect("localhost","root","");
 	mysqli_select_db($con,'mumbai_dabbawala');
@@ -36,10 +11,21 @@ if(count($_POST)>0) {
 	{
 		$_SESSION["username"] = $row['username'];
 		$_SESSION["password"] =$row['password'];
-		header('location:index.php');
+
+		if(!empty($_POST["remeberme"])) {
+			setcookie ("username",$_POST["username"],time()+ 3600);
+			setcookie ("password",$_POST["password"],time()+ 3600);
+			echo "cookie set successfully";
+			} 
+			else {
+				setcookie("username","");
+				setcookie("password","");
+				echo "cookie not set";
+			}
+	header('location:index.php');
 	}
 	else {
-		header('location:registration.html');
+		echo "<script type='text/javascript'>alert('Please Register First');location='registration.html';</script>";
 	}
 }
 /*if(isset($_SESSION["username"]))

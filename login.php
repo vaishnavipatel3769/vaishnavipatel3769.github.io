@@ -26,7 +26,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu">
-                        <a href="tiffin.html" class="dropdown-item">Tiffin</a>
+                        <a href="tiffin.php" class="dropdown-item">Tiffin</a>
                         <a href="#" class="dropdown-item">Catering</a>
                         
                     </div>
@@ -36,8 +36,8 @@
 				<div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
                     <div class="dropdown-menu">
-                        <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
-                        <a href="videogallery.html" class="dropdown-item">Video Gallery</a>
+                        <a href="imagegallery.php" class="dropdown-item">Image Gallery</a>
+                        <a href="videogallery.php" class="dropdown-item">Video Gallery</a>
                         
                     </div>
                 </div>
@@ -68,6 +68,7 @@
         <label><b> Remeber Me</b></label>
         <br>
         <button type="submit" class="btn">Login</button>
+                
     	<button type="button" class="btn" ><a href="registration.html"style="text-decoration: none;color:black">SignUp</a></button>
         <br>
         <a href="forgotpassword.html"style="text-decoration: none;color:black"> Forgot password? </a> 
@@ -86,7 +87,7 @@
     <div class="col-lg-3 col-xs-12 links" style="color:white">
       <h4 class="mt-lg-0 mt-sm-3">LINKS</h4>
         <ul class="m-0 p-0">
-          <li><a href="index.html" style="color:white">HOME</a></li>
+          <li><a href="index.php" style="color:white">HOME</a></li>
           <li><a href="#" style="color:white">ABOUT  US</a></li>
           <li><a href="#" style="color:white">SERVICES</a></li>
           <li><a href="#" style="color:white">MEDIA</a></li>

@@ -1,12 +1,5 @@
-<?php
+ <?php
 include('logindb.php');
-if($_SESSION["username"]) {
- ?>
- WELCOME <?php echo $_SESSION["username"]; ?>
-<?php
-  }
-else 
- echo "<h1>Please login first .</h1>";
  ?>
 
 <!DOCTYPE html>
@@ -117,8 +110,8 @@ else
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu">
-                        <a href="tiffin.html" class="dropdown-item">Tiffin</a>
-                        <a href="catering.html" class="dropdown-item">Catering</a>
+                        <a href="tiffin.php" class="dropdown-item">Tiffin</a>
+                        <a href="catering.php" class="dropdown-item">Catering</a>
                         
                     </div>
                 </div>
@@ -126,19 +119,38 @@ else
                    <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
                     <div class="dropdown-menu">
-                        <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
-                        <a href="videogallery.html" class="dropdown-item">Video Gallery</a>
+                        <a href="imagegallery.php" class="dropdown-item">Image Gallery</a>
+                        <a href="videogallery.php" class="dropdown-item">Video Gallery</a>
                         
                     </div>
                 </div>
-
+               
                 <a href="#aboutus" class="nav-item nav-link">About Us</a>
                 <a href="#contactus" class="nav-item nav-link">Contact Us</a>
             </div>
-           
-            <div class="navbar-nav">
-                 <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
-                <a href="login.php" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
+            <div style="color: white">
+                <?php
+                
+                  if(!empty($_SESSION["username"]))
+                  {
+                ?>
+                  WELCOME <?php echo $_SESSION["username"]; ?>
+                  <div class="navbar-nav">
+                    <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
+                    <a href="logout.php" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Logout</a>
+                  </div>
+                <?php
+                  }
+                else
+                {
+                ?>
+                <div class="navbar-nav">
+                  <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
+                  <a href="login.php" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
+                </div>
+                <?php
+              }
+                ?>
             </div>
         </div>
     </nav>
@@ -148,6 +160,20 @@ else
     <div class="a">
         <img class="img-fluid" src="./images/clouds.png" alt="dabba" style="margin-top: -300px;width: 100%" > 
     </div>
+
+<div id="boxes">
+    <div id="dialog" class="window"> 
+      <div id="san">
+        <a href="#" class="close agree">
+        <img src="./images/close.jpg" width="25px" style="float:right; margin-right: -5px; margin-top: -10px;"></a>
+        <img src="./images/popup.jpg" height="650" width="500">
+       </div>
+  </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script> 
+<script src="swc.js"></script>
+<div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask">
+</div>
+</div>
 
 <!--aboutus-->
 <div id="aboutus" class="container-fluid">
@@ -229,15 +255,15 @@ else
 <div class="container">
   <center><h1 class="font-weight-bolder mt-2" style="font-family: Poppins;color: #2D3C6B"> Recognition And Awardness</h1></center>
   <div class="row no-gutters gallerys mt-3">
-  	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
       <img src="./images/gal1.jpg" class="img-thumbnail  ml-4"></img>
-		    <div class="overlay">
-				  <div class="text">
+        <div class="overlay">
+          <div class="text">
           In 2005, the Indian Institute of Management (Ahmedabad) featured a case study on the Mumbai Dabbawalas from a management perspective of logistics.
           </div>
         </div>
     </div>
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+  <div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
     <img src="./images/gal2.jpg" class="img-thumbnail  ml-4"></img>
     <div class="overlay">
       <div class="text">
@@ -245,43 +271,44 @@ else
       </div>
     </div>
   </div>     
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+  <div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
     <img src="./images/gal3.jpg" class="img-thumbnail  ml-4"></img>
-	    <div class="overlay">
-				<div class="text">
+      <div class="overlay">
+        <div class="text">
           Mr Richard Branson actually travelled with us, like a Dabbawala and delivered a huge tiffin to his own employees at Virgin, Mumbai.
         </div>
       </div>
   </div>   
 
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box ">
+  <div class="col-lg-4 col-md-6 col-sm-12 col-12 box ">
     <img src="./images/gal4.jpg" class="img-thumbnail  ml-4"></img>
-	    <div class="overlay">
-				<div class="text">
+      <div class="overlay">
+        <div class="text">
           In 1998, Forbes Global magazine, conducted a quality assurance study on our operations and gave it a Six Sigma efficiency rating of 99.999999
-       	</div>
-		  </div>
+        </div>
+      </div>
   </div>   
 
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+  <div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
     <img src="./images/gal5.jpg" class="img-thumbnail  ml-4"></img>
-	    <div class="overlay">
-  	 		<div class="text">
+      <div class="overlay">
+        <div class="text">
            ISO 9001:2000 certified by the Joint Accreditation System of Australia and New Zealand.
         </div>
       </div>
   </div>   
 
-	<div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
+  <div class="col-lg-4 col-md-6 col-sm-12 col-12 box">
     <img src="./images/gal6.jpg" class="img-thumbnail ml-4"></img>
-	    <div class="overlay">
-				<div class="text">
+      <div class="overlay">
+        <div class="text">
             Prince Charles visited us during his visit to India. Charles also invited Dabbawalas to his wedding with Camilla Parker Bowles in London on 9 April 2005.
         </div>
       </div>
     </div>   
-	</div>
+  </div>
 </div>
+   
 	 
 <!--footer-->	
 <div id="contactus">  
@@ -296,7 +323,7 @@ else
     <div class="col-lg-3 col-xs-12 links" style="color:white">
       <h4 class="mt-lg-0 mt-sm-3">LINKS</h4>
         <ul class="m-0 p-0">
-          <li><a href="index.html" style="color:white">HOME</a></li>
+          <li><a href="index.php" style="color:white">HOME</a></li>
           <li><a href="#aboutus" style="color:white">ABOUT  US</a></li>
           <li><a href="#" style="color:white">SERVICES</a></li>
           <li><a href="#" style="color:white">MEDIA</a></li>

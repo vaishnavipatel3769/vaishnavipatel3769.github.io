@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<title>Edit Profile</title>  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -11,28 +14,66 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="login.css">
-    
+   <link rel="stylesheet" type="text/css" href="signup.css">
+
+   <!--form validation-->
+  <script>
+    function validateform(){
+    // Retrieving the values of form elements 
+     //var name = document.register.name.value;
+    // var gender = document.register.gender.value;
+    //var email = document.register.email.value;
+   // var psw = document.register.psw.value;
+    //var pswconfirm = document.register.pswconfirm.value;
+    var mobileno=document.register.mobileno,value;
+    //alert(pswconfirm);
+    //alert(psw);
+     // Validate name
+   /* if(name == "") {
+        alert("Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            alert("Please enter a valid name");
+            document.register.name.focus() ;
+            return false;
+        }
+    }
+    //validate psw
+    if (psw != pswconfirm) {
+                alert("Passwords do not match.");
+                document.register.pswconfirm.focus() ;
+                return false;
+    }*/
+
+    //validate mobileno
+    if (mobileno.value.length!=10) {
+            alert("Mobile no should be of 10 Digits only");
+             document.register.mobileno.focus() ;
+            return false;
+    }
+            return true;
+          }
+
+   </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px;">
-		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="font-size: 18px">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+       <span class="navbar-toggler-icon" style="background-image: url(./images/cycle.png)";></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        		<div class="navbar-nav">
-		        <a href="index.html" class="nav-item nav-link">Home</a>
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu">
                         <a href="tiffin.html" class="dropdown-item">Tiffin</a>
                         <a href="#" class="dropdown-item">Catering</a>
-                        
                     </div>
                 </div>
-				
-				
-				<div class="nav-item dropdown">
+				 
+				 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Media</a>
                     <div class="dropdown-menu">
                         <a href="imagegallery.html" class="dropdown-item">Image Gallery</a>
@@ -40,36 +81,48 @@
                         
                     </div>
                 </div>
+				
                 <a href="#" class="nav-item nav-link">About Us</a>
                 <a href="#" class="nav-item nav-link">Contact Us</a>
             </div>
             
             <div class="navbar-nav">
-                 <a href="registration.html" class="nav-item nav-link"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
-                <a href="registration.html" class="nav-item nav-link active"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
+                 <a href="" class="nav-item nav-link active"><i class='fas fa-user-alt' style='font-size:20px'></i> Signup</a>
+                <a href="login.html" class="nav-item nav-link"><i class='fas fa-sign-in-alt' style='font-size:24px'></i> Login</a>
             </div>
         </div>
     </nav>
-</div>
 
- <div class="login"> 
-    <form action="" method="">  
-       <center> <img src="./images/logo.jpg" width="100px"></center>
-        <h1 class="font-weight-bolder"> <center> Sign In </center> </h1>
-        <p> <center>Please fill this form to login</center> </p>
-        <hr> 
-        <label><b>Username : </b></label>   
-        <input type="text" placeholder="Enter Username" name="username" required>  
-        <label><b>Password :</b> </label>   
-        <input type="password" placeholder="Enter Password" name="password" required>  
-        <center>  
-        <button type="submit" class="btn">Login</button>
-    	<button type="button" class="btn" ><a href="registration.html"style="text-decoration: none;color:black">SignUp</a></button>
-        <br>
-        <a href="forgotpassword.html"style="text-decoration: none;color:black"> Forgot password? </a> 
-    </center>
-  </form>  
-</div>   
+<!-- Form-->
+  <form name="edit"  action="editdb.php"  onsubmit="return (validateform())" method="post">
+      <div class="signup">
+        <center> <img src="./images/logo.jpg" width="100px"></center>
+        <h1 class="font-weight-bolder"> <center> Edit Profile </center> </h1>
+        <p> <center>Please fill this form to edit your account</center> </p>
+        <hr>      
+       
+        <label for="contactno"><b>Old Contact Number </b></label>
+        <input type="number" placeholder="Enter Old Contact Number"  pattern="[0-9]{10}"  name="mobileno" maxlength="10"  required>
+
+        <label for="contactno"><b>New Contact Number </b></label>
+        <input type="number" placeholder="Enter New Contact Number"  pattern="[0-9]{10}"  name="new_mobileno" maxlength="10"  required>
+        
+         <label for="address"><b>Old Address</b></label>
+        <input type="text" placeholder="Enter Old Address" name="address" required>
+        
+        <label for="address"><b>New Address</b></label>
+        <input type="text" placeholder="Enter New Address" name="newadd" required>
+        <br>    
+
+        <center> 
+        	<button type="submit" class="btn" name="edit">Edit Profile</button>
+        </center>
+        <!---<center>Already Registred? <a href="login.html" style="text-decoration: none;color:black">Login Here</a></center>!--->
+        </div>
+    </form>  
+
+
+<!--footer-->
 
 <div class="mt-5 pt-5 pb-5 footer" style="background:black">
 <div class="container"  style="color:white">
@@ -103,6 +156,6 @@
     </div>    
 </div>
 </div>
-
 </body>
 </html>
+
